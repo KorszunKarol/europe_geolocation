@@ -75,31 +75,3 @@ def is_official_coverage(metadata):
         return True
     else:
         return False
-
-
-def main(api_key, num_images=10):
-    # Create a directory to save the generated images
-    if not os.path.exists("street_view_images_europe_2"):
-        os.makedirs("street_view_images_europe_2")
-    # download_images("/home/karolito/DL/maps/europe.txt", api_key='AIzaSyAE78tarOorZFiRgoS2xoEScVryrVubqvE', size=(640, 480), radius=10000)
-    south_america_lat_lower = -56.0
-    south_america_lat_upper = 12.5
-    south_america_lon_lower = -81.6
-    south_america_lon_upper = -34.8
-
-    europe_northernmost_lat = 71.2
-    europe_southernmost_lat = 36.0
-    europe_westernmost_lon = -9.9
-    europe_easternmost_lon = 40.0
-    # Set the number of coordinates you want to generate
-    num_coordinates = 30_000
-    # europe_coordinates = get_continent_data(num_coordinates, europe_southernmost_lat, europe_northernmost_lat, europe_westernmost_lon, europe_easternmost_lon)
-    # south_america_coordinates = get_continent_data(num_coordinates, south_america_lat_lower, south_america_lat_upper, south_america_lon_lower, south_america_lon_upper)
-
-    download_images("europe_2.txt", 'AIzaSyAE78tarOorZFiRgoS2xoEScVryrVubqvE', size=(640, 480), radius=10_000)
-
-
-if __name__ == "__main__":
-
-    api_key = 'AIzaSyAE78tarOorZFiRgoS2xoEScVryrVubqvE'
-    main(api_key, num_images=10)
